@@ -19,68 +19,83 @@ st.set_page_config(
     layout="wide",
 )
 
-# ---------- Premium CSS ----------
 st.markdown(
     """
     <style>
-    /* Background */
+    /* Warm gradient background */
     .stApp {
-        background: radial-gradient(circle at top left, #1f2937 0, #020617 40%, #000000 100%);
-        color: #e5e7eb;
+        background: radial-gradient(circle at top left, #3b1f2b 0, #120b18 40%, #050308 100%);
+        color: #f5f5f4;
         font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    /* Main container width */
+    /* Main container padding */
     .main > div {
         padding-top: 1.5rem;
     }
 
-    /* Title spacing */
     h1 {
         font-weight: 700 !important;
-        letter-spacing: 0.03em;
+        letter-spacing: 0.04em;
     }
 
-    /* Chat bubbles */
+    /* Chat bubbles: glass + warm accent */
     [data-testid="stChatMessage"] {
         padding: 0.25rem 0;
     }
     [data-testid="stChatMessage"] > div {
         border-radius: 18px;
-        padding: 0.8rem 1rem;
-        backdrop-filter: blur(16px);
-        background: linear-gradient(135deg, rgba(15,23,42,0.9), rgba(30,64,175,0.7));
-        border: 1px solid rgba(148,163,184,0.3);
-        box-shadow: 0 18px 45px rgba(15,23,42,0.7);
+        padding: 0.85rem 1rem;
+        backdrop-filter: blur(18px);
+        background: linear-gradient(135deg, rgba(24,16,32,0.92), rgba(58,34,55,0.85));
+        border: 1px solid rgba(248, 250, 252, 0.06);
+        box-shadow: 0 18px 45px rgba(15,15,23,0.85);
     }
+    /* User bubble: soft amber + rose */
     [data-testid="stChatMessage"][data-testid="stChatMessage-User"] > div {
-        background: linear-gradient(135deg, rgba(59,130,246,0.95), rgba(37,99,235,0.9));
-        border: 1px solid rgba(191,219,254,0.8);
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.96), rgba(244, 114, 182, 0.95));
+        border: 1px solid rgba(254, 243, 199, 0.9);
+        color: #111827;
+        font-weight: 500;
     }
 
     /* Chat input */
     [data-testid="stChatInput"] textarea {
         border-radius: 999px !important;
-        padding: 0.9rem 1.2rem !important;
-        background: rgba(15,23,42,0.7) !important;
-        border: 1px solid rgba(148,163,184,0.6) !important;
-        color: #e5e7eb !important;
+        padding: 0.95rem 1.3rem !important;
+        background: rgba(15,10,20,0.92) !important;
+        border: 1px solid rgba(148, 132, 178, 0.7) !important;
+        color: #f5f5f4 !important;
+    }
+    [data-testid="stChatInput"] textarea::placeholder {
+        color: #a1a1aa !important;
     }
     [data-testid="stChatInput"] button {
         border-radius: 999px !important;
-        padding: 0.5rem 1.2rem !important;
-        background: linear-gradient(135deg, #22c55e, #16a34a) !important;
-        color: white !important;
+        padding: 0.55rem 1.4rem !important;
+        background: linear-gradient(135deg, #f97316, #ec4899) !important;
+        color: #0f172a !important;
         border: none !important;
-        font-weight: 600 !important;
-        box-shadow: 0 10px 30px rgba(22,163,74,0.5);
+        font-weight: 700 !important;
+        box-shadow: 0 10px 30px rgba(236, 72, 153, 0.55);
     }
 
     /* Sidebar glass card */
     section[data-testid="stSidebar"] > div {
-        background: rgba(15,23,42,0.85);
-        backdrop-filter: blur(18px);
-        border-right: 1px solid rgba(51,65,85,0.9);
+        background: rgba(13, 10, 18, 0.96);
+        backdrop-filter: blur(20px);
+        border-right: 1px solid rgba(55, 48, 71, 0.9);
+    }
+
+    /* Sidebar text tweaks */
+    section[data-testid="stSidebar"] h3, section[data-testid="stSidebar"] label {
+        color: #e5e7eb !important;
+    }
+
+    /* Subheader / description text */
+    .description-text {
+        color: #d4d4d8;
+        font-size: 0.95rem;
     }
     </style>
     """,
@@ -113,9 +128,9 @@ st.markdown(
     """
     <div style="padding: 0.4rem 0 1.2rem 0;">
         <h1>🔎 AI Research Agent with Web Search</h1>
-        <p style="color:#9ca3af; max-width:780px; font-size:0.95rem;">
-            Ask any programming, AI, or research question and the agent will combine web search, Wikipedia, 
-            and Arxiv papers to generate concise, well‑reasoned answers.
+        <p class="description-text" style="max-width:780px;">
+            Ask any programming, AI, or research question and the agent will combine web search, Wikipedia,
+            and Arxiv papers to give focused, research‑grade answers.
         </p>
     </div>
     """,

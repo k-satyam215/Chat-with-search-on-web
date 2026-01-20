@@ -1,39 +1,96 @@
-# Chat with Search on Web 🌐🤖
+# Chat with Search on Web 🔎🤖
 
-`Chat-with-search-on-web` is a Python-based web application that combines AI-powered chat with **real-time web search** capabilities.  
-The app allows users to ask natural language questions and retrieves **up-to-date information from the web** to enhance AI responses with current knowledge.
+**Chat with Search on Web** is an **AI research assistant** built using **Streamlit, LangChain, and Groq LLMs** that can answer questions by intelligently combining **live web search**, **Wikipedia**, and **Arxiv research papers**.
 
-This project demonstrates how to integrate **search APIs** with chat models to overcome static language model limitations and give **dynamic, sourced answers**.
+Unlike a basic chatbot, this system uses a **tool-augmented reasoning agent** that decides when and how to query external sources to generate **grounded, research-grade answers**.
 
 ---
 
-## 🚀 Features
+## 🎯 Objective
 
-- 🧠 **AI Chat Interface**  
-  Chat with an AI agent that can answer questions based on **web search results**.
+The goal of this project is to:
+- Build a **search-aware AI assistant**
+- Overcome the static knowledge limitation of LLMs
+- Demonstrate **agentic reasoning with external tools**
+- Provide concise, factual, and up-to-date answers for research and technical queries
 
-- 🔍 **Web Search Integration**  
-  Supports searching the internet (example: via Bing/Web search APIs or custom search wrappers) and includes relevant snippets with answers.
+---
 
-- 📚 **Sources & Links**  
-  Provide users with **external source links** to the information used in answers.
+## 🚀 Key Features
 
-- 📡 **Real-Time Data**  
-  Answers use fresh data from the web, not just pretrained knowledge.
+### 🤖 Agentic AI with Tool Usage
+- Zero-shot ReAct agent (reason + act loop)
+- Dynamically decides which tool to use
+- Handles multi-step reasoning automatically
 
-- 📝 **Conversational Experience**  
-  Maintain context across multiple turns for smoother interaction.
+---
+
+### 🔍 Web-Integrated Search
+- **DuckDuckGo Search** for real-time web results
+- **Wikipedia API** for factual grounding
+- **Arxiv API** for academic & research papers
+
+---
+
+### 🧠 LLM Powered by Groq
+- Uses **Groq-hosted LLaMA 3.1 (8B Instant)**
+- Fast inference with streaming responses
+- Controlled and concise answer generation
+
+---
+
+### 💬 Interactive Chat Interface
+- Streamlit-based chat UI
+- Persistent conversation history
+- Live reasoning visualization using callbacks
+
+---
+
+### 🎨 Polished UI/UX
+- Custom gradient background
+- Glassmorphism chat bubbles
+- Sidebar-based API key input
+- Wide-layout research-friendly interface
 
 ---
 
 ## 🧠 How It Works
 
-1. User enters a query in the chat UI.
-2. The system performs a **web search** for relevant pages.
-3. Search results are processed and summarized using an AI model.
-4. The model generates a conversational response grounded in search data.
-5. Source links are optionally included in the output.
+1. User enters a question in natural language
+2. The agent analyzes the query
+3. Based on intent, it may:
+   - Search the web
+   - Query Wikipedia
+   - Fetch Arxiv papers
+4. Retrieved information is combined with LLM reasoning
+5. The agent produces a **grounded final answer**
 
-This approach combines traditional search engines with modern Large Language Models to produce **accurate and current answers**.
+This follows a **tool-augmented reasoning loop**, not simple text generation.
 
 ---
+
+## 📂 Project Structure
+
+Chat-with-search-on-web/ │ ├── app.py                  # Streamlit application ├── requirements.txt        # Dependencies ├── .env                    # Environment variables (optional) └── README.md
+
+---
+
+## 🛠️ Tech Stack
+
+- **Python**
+- **Streamlit**
+- **LangChain**
+- **Groq (LLaMA 3.1)**
+- **DuckDuckGo Search**
+- **Wikipedia API**
+- **Arxiv API**
+- **dotenv**
+
+---
+
+## ⚙️ Setup & Installation
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/k-satyam215/Chat-with-search-on-web.git
+cd Chat-with-search-on-web
